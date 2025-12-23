@@ -1,0 +1,29 @@
+<!-- test3_product_details.html -->
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="product-details">
+        <!-- عنوان المنتج -->
+        <h1 class="title">{{ selected_product_name }}</h1>
+        
+        <!-- صورة المنتج -->
+        <div class="image-box">
+            <img src="{{ selected_product_image }}" width="500px">
+        </div>
+
+        <!-- التفاصيل والسعر -->
+        <div class="info">
+            <p class="description">{{ selected_product_details }}</p>
+            <span class="price-tag">{{ selected_product_price }} S.Y.P</span>
+        </div>
+
+        <!-- ميزة إضافية (اختيارية): زر الحذف -->
+        <div class="actions">
+            <a href="/edit">تعديل</a>
+            <button class="btn-delete">حذف {{ selected_product_name }}</button>
+        </div>
+    </div>
+</body>
+</html>

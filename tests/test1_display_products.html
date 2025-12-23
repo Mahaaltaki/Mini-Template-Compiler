@@ -1,0 +1,31 @@
+<!-- test1_display_products.html -->
+<html>
+<head>
+    <title>متجر الهواتف الذكية</title>
+</head>
+<body>
+    <h1>قائمة المنتجات المتاحة</h1>
+    
+    <!-- هنا يبدأ السكوب العام (Global Scope) -->
+    <div class="products-container">
+        
+        <!-- بداية الحلقة: يجب أن ينشئ المترجم سكوب جديد هنا -->
+        <!-- يجب إضافة المتغير 'item' إلى جدول الرموز في السكوب الجديد -->
+        {% for item in products_list %}
+            <div class="card">
+                <!-- استخدام المتغيرات داخل السكوب -->
+                <img src="{{ item.image_url }}" alt="Product Image">
+                <h2>{{ item.name }}</h2>
+                <p>السعر: {{ item.price }} ليرة سورية</p>
+                <button>إضافة للسلة</button>
+            </div>
+        {% endfor %}
+        <!-- هنا ينتهي السكوب ويعود للسكوب العام -->
+
+    </div>
+    
+    <footer>
+        <p>جميع الحقوق محفوظة {{ current_year }}</p>
+    </footer>
+</body>
+</html>
