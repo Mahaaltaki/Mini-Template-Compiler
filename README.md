@@ -1,4 +1,4 @@
-# Mini-Template Compiler 
+# Mini-Template Compiler 🚀
 
 ### A Robust Web Template Engine Compiler
 
@@ -30,7 +30,7 @@ The compiler is designed as a modular processing pipeline:
     *   `PrintTreeVisitor`: Visualizes the AST structure for debugging purposes.
     *   `SemanticAnalyzerVisitor`: Validates variable definitions, types, and populates the Symbol Table.
 
-##  How to Run
+## 💻 How to Run
 Ensure you have **Python 3.x** installed. Run the following command in your terminal:
 
 ```bash
