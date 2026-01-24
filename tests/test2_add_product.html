@@ -1,27 +1,24 @@
-<!-- test2_add_product.html -->
 <html>
 <body>
     <div class="admin-panel">
-        <h1>إضافة منتج جديد</h1>
+        <h1>Add New Product</h1>
         
-        <!-- تعريف متغير محلي (لأغراض اختبار Symbol Table) -->
         {% set default_category = "electronics" %}
         
         <form action="/submit-product" method="POST">
-            <label>اسم المنتج:</label>
-            <input type="text" name="product_name" placeholder="أدخل الاسم...">
+            <label>Product Name:</label>
+            <input type="text" name="product_name" placeholder="Enter name...">
             
-            <label>السعر:</label>
+            <label>Price:</label>
             <input type="number" name="product_price">
             
-            <label>التصنيف:</label>
-            <!-- استخدام المتغير المعرف سابقاً -->
+            <label>Category:</label>
             <input type="text" name="category" value="{{ default_category }}">
             
-            <label>صورة المنتج:</label>
+            <label>Product Image:</label>
             <input type="file" name="product_image">
             
-            <button type="submit">حفظ المنتج</button>
+            <button type="submit">Save Product</button>
         </form>
     </div>
 </body>
