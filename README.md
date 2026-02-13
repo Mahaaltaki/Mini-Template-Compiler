@@ -139,4 +139,3 @@ code Text
 | title      | JINJA VAR     | Template   |
 | item       | LOOP VAR      | Local Scope|
 
-Developed by: [ Maha altaki]
