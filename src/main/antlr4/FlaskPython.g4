@@ -1,7 +1,5 @@
 grammar FlaskPython;
 
-//Parser Rules 
-
 program : statement* EOF # ProgramNode;
 
 statement
@@ -25,8 +23,6 @@ argList : expression (COMMA expression)*;
 expressionList : expression (COMMA expression)*;
 dictPairs : pair (COMMA pair)*;
 pair : expression COLON expression;
-
-// Lexer Rules
 
 FROM   : 'from';
 IMPORT : 'import';

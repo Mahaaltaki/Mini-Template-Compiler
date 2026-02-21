@@ -1,13 +1,13 @@
 package visitor;
 
 import symboltable.SymbolTable;
-import antlr.TemplateHTMLBaseVisitor;
+import antlr.TemplateHTMLParserBaseVisitor;
 import antlr.TemplateHTMLParser;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class HtmlSymbolTableVisitor extends TemplateHTMLBaseVisitor<Void> {
+public class HtmlSymbolTableVisitor extends TemplateHTMLParserBaseVisitor<Void> {
     private SymbolTable symbolTable;
 
     public HtmlSymbolTableVisitor() {
@@ -16,6 +16,12 @@ public class HtmlSymbolTableVisitor extends TemplateHTMLBaseVisitor<Void> {
 
     public SymbolTable getSymbolTable() {
         return symbolTable;
+    }
+
+    @Override
+    public Void visitDoctypeNode(TemplateHTMLParser.DoctypeNodeContext ctx) {
+        symbolTable.define("DOCTYPE", "META", "Template");
+        return null;
     }
 
     @Override

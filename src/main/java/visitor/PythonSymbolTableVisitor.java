@@ -3,7 +3,7 @@ package visitor;
 import symboltable.SymbolTable;
 import antlr.*;
 
-public class PythonSymbolTableVisitor extends FlaskPythonBaseVisitor<Void> {
+public class PythonSymbolTableVisitor extends FlaskPythonParserBaseVisitor<Void> {
     private SymbolTable symbolTable;
 
     public PythonSymbolTableVisitor() {

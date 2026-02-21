@@ -7,9 +7,9 @@ rule : selectors block # RuleNode;
 selectors : selector (',' selector)* # SelectorListNode;
 
 selector
-    : '.' ID    # ClassSelector
-    | '#' ID    # IdSelector
-    | ID        # TagSelector
+    : '.' ID (ID)?   # ClassSelector
+    | '#' ID (ID)?   # IdSelector
+    | ID (ID)?       # TagSelector
     ;
 
 block : '{' declaration* '}' # BlockNode;

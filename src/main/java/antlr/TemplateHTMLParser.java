@@ -1,3 +1,4 @@
+// Generated from TemplateHTMLParser.g4 by ANTLR 4.13.1
 package antlr;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -16,13 +17,14 @@ public class TemplateHTMLParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		JINJA_VAR=1, JINJA_TAG=2, TAG=3, TEXT=4, WS=5;
+		DOCTYPE=1, JINJA_VAR=2, JINJA_TAG=3, TAG=4, TEXT=5, WS=6;
 	public static final int
-		RULE_htmlDocument = 0, RULE_node = 1, RULE_jinjaPrint = 2, RULE_jinjaCode = 3, 
-		RULE_htmlTag = 4, RULE_htmlText = 5;
+		RULE_htmlDocument = 0, RULE_node = 1, RULE_doctype = 2, RULE_jinjaPrint = 3, 
+		RULE_jinjaCode = 4, RULE_htmlTag = 5, RULE_htmlText = 6;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"htmlDocument", "node", "jinjaPrint", "jinjaCode", "htmlTag", "htmlText"
+			"htmlDocument", "node", "doctype", "jinjaPrint", "jinjaCode", "htmlTag", 
+			"htmlText"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -34,7 +36,7 @@ public class TemplateHTMLParser extends Parser {
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "JINJA_VAR", "JINJA_TAG", "TAG", "TEXT", "WS"
+			null, "DOCTYPE", "JINJA_VAR", "JINJA_TAG", "TAG", "TEXT", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -72,7 +74,7 @@ public class TemplateHTMLParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "TemplateHTML.g4"; }
+	public String getGrammarFileName() { return "TemplateHTMLParser.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -111,8 +113,16 @@ public class TemplateHTMLParser extends Parser {
 		}
 		public DocumentNodeContext(HtmlDocumentContext ctx) { copyFrom(ctx); }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).enterDocumentNode(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).exitDocumentNode(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TemplateHTMLVisitor ) return ((TemplateHTMLVisitor<? extends T>)visitor).visitDocumentNode(this);
+			if ( visitor instanceof TemplateHTMLParserVisitor ) return ((TemplateHTMLParserVisitor<? extends T>)visitor).visitDocumentNode(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -125,21 +135,21 @@ public class TemplateHTMLParser extends Parser {
 			_localctx = new DocumentNodeContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(15);
+			setState(17);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 30L) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 62L) != 0)) {
 				{
 				{
-				setState(12);
+				setState(14);
 				node();
 				}
 				}
-				setState(17);
+				setState(19);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(18);
+			setState(20);
 			match(EOF);
 			}
 		}
@@ -173,8 +183,16 @@ public class TemplateHTMLParser extends Parser {
 		}
 		public JinjaPrintNodeContext(NodeContext ctx) { copyFrom(ctx); }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).enterJinjaPrintNode(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).exitJinjaPrintNode(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TemplateHTMLVisitor ) return ((TemplateHTMLVisitor<? extends T>)visitor).visitJinjaPrintNode(this);
+			if ( visitor instanceof TemplateHTMLParserVisitor ) return ((TemplateHTMLParserVisitor<? extends T>)visitor).visitJinjaPrintNode(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -185,8 +203,16 @@ public class TemplateHTMLParser extends Parser {
 		}
 		public JinjaCodeNodeContext(NodeContext ctx) { copyFrom(ctx); }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).enterJinjaCodeNode(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).exitJinjaCodeNode(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TemplateHTMLVisitor ) return ((TemplateHTMLVisitor<? extends T>)visitor).visitJinjaCodeNode(this);
+			if ( visitor instanceof TemplateHTMLParserVisitor ) return ((TemplateHTMLParserVisitor<? extends T>)visitor).visitJinjaCodeNode(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -197,8 +223,16 @@ public class TemplateHTMLParser extends Parser {
 		}
 		public TextNodeContext(NodeContext ctx) { copyFrom(ctx); }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).enterTextNode(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).exitTextNode(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TemplateHTMLVisitor ) return ((TemplateHTMLVisitor<? extends T>)visitor).visitTextNode(this);
+			if ( visitor instanceof TemplateHTMLParserVisitor ) return ((TemplateHTMLParserVisitor<? extends T>)visitor).visitTextNode(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -209,8 +243,36 @@ public class TemplateHTMLParser extends Parser {
 		}
 		public HtmlTagNodeContext(NodeContext ctx) { copyFrom(ctx); }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).enterHtmlTagNode(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).exitHtmlTagNode(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TemplateHTMLVisitor ) return ((TemplateHTMLVisitor<? extends T>)visitor).visitHtmlTagNode(this);
+			if ( visitor instanceof TemplateHTMLParserVisitor ) return ((TemplateHTMLParserVisitor<? extends T>)visitor).visitHtmlTagNode(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class DoctypeNodeContext extends NodeContext {
+		public DoctypeContext doctype() {
+			return getRuleContext(DoctypeContext.class,0);
+		}
+		public DoctypeNodeContext(NodeContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).enterDoctypeNode(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).exitDoctypeNode(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TemplateHTMLParserVisitor ) return ((TemplateHTMLParserVisitor<? extends T>)visitor).visitDoctypeNode(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -219,43 +281,94 @@ public class TemplateHTMLParser extends Parser {
 		NodeContext _localctx = new NodeContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_node);
 		try {
-			setState(24);
+			setState(27);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case JINJA_VAR:
-				_localctx = new JinjaPrintNodeContext(_localctx);
+			case DOCTYPE:
+				_localctx = new DoctypeNodeContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(20);
+				setState(22);
+				doctype();
+				}
+				break;
+			case JINJA_VAR:
+				_localctx = new JinjaPrintNodeContext(_localctx);
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(23);
 				jinjaPrint();
 				}
 				break;
 			case JINJA_TAG:
 				_localctx = new JinjaCodeNodeContext(_localctx);
-				enterOuterAlt(_localctx, 2);
+				enterOuterAlt(_localctx, 3);
 				{
-				setState(21);
+				setState(24);
 				jinjaCode();
 				}
 				break;
 			case TAG:
 				_localctx = new HtmlTagNodeContext(_localctx);
-				enterOuterAlt(_localctx, 3);
+				enterOuterAlt(_localctx, 4);
 				{
-				setState(22);
+				setState(25);
 				htmlTag();
 				}
 				break;
 			case TEXT:
 				_localctx = new TextNodeContext(_localctx);
-				enterOuterAlt(_localctx, 4);
+				enterOuterAlt(_localctx, 5);
 				{
-				setState(23);
+				setState(26);
 				htmlText();
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class DoctypeContext extends ParserRuleContext {
+		public TerminalNode DOCTYPE() { return getToken(TemplateHTMLParser.DOCTYPE, 0); }
+		public DoctypeContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_doctype; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).enterDoctype(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).exitDoctype(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TemplateHTMLParserVisitor ) return ((TemplateHTMLParserVisitor<? extends T>)visitor).visitDoctype(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final DoctypeContext doctype() throws RecognitionException {
+		DoctypeContext _localctx = new DoctypeContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_doctype);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(29);
+			match(DOCTYPE);
 			}
 		}
 		catch (RecognitionException re) {
@@ -277,19 +390,27 @@ public class TemplateHTMLParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_jinjaPrint; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).enterJinjaPrint(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).exitJinjaPrint(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TemplateHTMLVisitor ) return ((TemplateHTMLVisitor<? extends T>)visitor).visitJinjaPrint(this);
+			if ( visitor instanceof TemplateHTMLParserVisitor ) return ((TemplateHTMLParserVisitor<? extends T>)visitor).visitJinjaPrint(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final JinjaPrintContext jinjaPrint() throws RecognitionException {
 		JinjaPrintContext _localctx = new JinjaPrintContext(_ctx, getState());
-		enterRule(_localctx, 4, RULE_jinjaPrint);
+		enterRule(_localctx, 6, RULE_jinjaPrint);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(26);
+			setState(31);
 			match(JINJA_VAR);
 			}
 		}
@@ -312,19 +433,27 @@ public class TemplateHTMLParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_jinjaCode; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).enterJinjaCode(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).exitJinjaCode(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TemplateHTMLVisitor ) return ((TemplateHTMLVisitor<? extends T>)visitor).visitJinjaCode(this);
+			if ( visitor instanceof TemplateHTMLParserVisitor ) return ((TemplateHTMLParserVisitor<? extends T>)visitor).visitJinjaCode(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final JinjaCodeContext jinjaCode() throws RecognitionException {
 		JinjaCodeContext _localctx = new JinjaCodeContext(_ctx, getState());
-		enterRule(_localctx, 6, RULE_jinjaCode);
+		enterRule(_localctx, 8, RULE_jinjaCode);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(28);
+			setState(33);
 			match(JINJA_TAG);
 			}
 		}
@@ -347,19 +476,27 @@ public class TemplateHTMLParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_htmlTag; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).enterHtmlTag(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).exitHtmlTag(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TemplateHTMLVisitor ) return ((TemplateHTMLVisitor<? extends T>)visitor).visitHtmlTag(this);
+			if ( visitor instanceof TemplateHTMLParserVisitor ) return ((TemplateHTMLParserVisitor<? extends T>)visitor).visitHtmlTag(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final HtmlTagContext htmlTag() throws RecognitionException {
 		HtmlTagContext _localctx = new HtmlTagContext(_ctx, getState());
-		enterRule(_localctx, 8, RULE_htmlTag);
+		enterRule(_localctx, 10, RULE_htmlTag);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(30);
+			setState(35);
 			match(TAG);
 			}
 		}
@@ -382,19 +519,27 @@ public class TemplateHTMLParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_htmlText; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).enterHtmlText(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TemplateHTMLParserListener ) ((TemplateHTMLParserListener)listener).exitHtmlText(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TemplateHTMLVisitor ) return ((TemplateHTMLVisitor<? extends T>)visitor).visitHtmlText(this);
+			if ( visitor instanceof TemplateHTMLParserVisitor ) return ((TemplateHTMLParserVisitor<? extends T>)visitor).visitHtmlText(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final HtmlTextContext htmlText() throws RecognitionException {
 		HtmlTextContext _localctx = new HtmlTextContext(_ctx, getState());
-		enterRule(_localctx, 10, RULE_htmlText);
+		enterRule(_localctx, 12, RULE_htmlText);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(32);
+			setState(37);
 			match(TEXT);
 			}
 		}
@@ -410,29 +555,32 @@ public class TemplateHTMLParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0005#\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
+		"\u0004\u0001\u0006(\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
 		"\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004\u0002"+
-		"\u0005\u0007\u0005\u0001\u0000\u0005\u0000\u000e\b\u0000\n\u0000\f\u0000"+
-		"\u0011\t\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001"+
-		"\u0001\u0001\u0003\u0001\u0019\b\u0001\u0001\u0002\u0001\u0002\u0001\u0003"+
-		"\u0001\u0003\u0001\u0004\u0001\u0004\u0001\u0005\u0001\u0005\u0001\u0005"+
-		"\u0000\u0000\u0006\u0000\u0002\u0004\u0006\b\n\u0000\u0000 \u0000\u000f"+
-		"\u0001\u0000\u0000\u0000\u0002\u0018\u0001\u0000\u0000\u0000\u0004\u001a"+
-		"\u0001\u0000\u0000\u0000\u0006\u001c\u0001\u0000\u0000\u0000\b\u001e\u0001"+
-		"\u0000\u0000\u0000\n \u0001\u0000\u0000\u0000\f\u000e\u0003\u0002\u0001"+
-		"\u0000\r\f\u0001\u0000\u0000\u0000\u000e\u0011\u0001\u0000\u0000\u0000"+
-		"\u000f\r\u0001\u0000\u0000\u0000\u000f\u0010\u0001\u0000\u0000\u0000\u0010"+
-		"\u0012\u0001\u0000\u0000\u0000\u0011\u000f\u0001\u0000\u0000\u0000\u0012"+
-		"\u0013\u0005\u0000\u0000\u0001\u0013\u0001\u0001\u0000\u0000\u0000\u0014"+
-		"\u0019\u0003\u0004\u0002\u0000\u0015\u0019\u0003\u0006\u0003\u0000\u0016"+
-		"\u0019\u0003\b\u0004\u0000\u0017\u0019\u0003\n\u0005\u0000\u0018\u0014"+
-		"\u0001\u0000\u0000\u0000\u0018\u0015\u0001\u0000\u0000\u0000\u0018\u0016"+
-		"\u0001\u0000\u0000\u0000\u0018\u0017\u0001\u0000\u0000\u0000\u0019\u0003"+
-		"\u0001\u0000\u0000\u0000\u001a\u001b\u0005\u0001\u0000\u0000\u001b\u0005"+
-		"\u0001\u0000\u0000\u0000\u001c\u001d\u0005\u0002\u0000\u0000\u001d\u0007"+
-		"\u0001\u0000\u0000\u0000\u001e\u001f\u0005\u0003\u0000\u0000\u001f\t\u0001"+
-		"\u0000\u0000\u0000 !\u0005\u0004\u0000\u0000!\u000b\u0001\u0000\u0000"+
-		"\u0000\u0002\u000f\u0018";
+		"\u0005\u0007\u0005\u0002\u0006\u0007\u0006\u0001\u0000\u0005\u0000\u0010"+
+		"\b\u0000\n\u0000\f\u0000\u0013\t\u0000\u0001\u0000\u0001\u0000\u0001\u0001"+
+		"\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0003\u0001\u001c\b\u0001"+
+		"\u0001\u0002\u0001\u0002\u0001\u0003\u0001\u0003\u0001\u0004\u0001\u0004"+
+		"\u0001\u0005\u0001\u0005\u0001\u0006\u0001\u0006\u0001\u0006\u0000\u0000"+
+		"\u0007\u0000\u0002\u0004\u0006\b\n\f\u0000\u0000%\u0000\u0011\u0001\u0000"+
+		"\u0000\u0000\u0002\u001b\u0001\u0000\u0000\u0000\u0004\u001d\u0001\u0000"+
+		"\u0000\u0000\u0006\u001f\u0001\u0000\u0000\u0000\b!\u0001\u0000\u0000"+
+		"\u0000\n#\u0001\u0000\u0000\u0000\f%\u0001\u0000\u0000\u0000\u000e\u0010"+
+		"\u0003\u0002\u0001\u0000\u000f\u000e\u0001\u0000\u0000\u0000\u0010\u0013"+
+		"\u0001\u0000\u0000\u0000\u0011\u000f\u0001\u0000\u0000\u0000\u0011\u0012"+
+		"\u0001\u0000\u0000\u0000\u0012\u0014\u0001\u0000\u0000\u0000\u0013\u0011"+
+		"\u0001\u0000\u0000\u0000\u0014\u0015\u0005\u0000\u0000\u0001\u0015\u0001"+
+		"\u0001\u0000\u0000\u0000\u0016\u001c\u0003\u0004\u0002\u0000\u0017\u001c"+
+		"\u0003\u0006\u0003\u0000\u0018\u001c\u0003\b\u0004\u0000\u0019\u001c\u0003"+
+		"\n\u0005\u0000\u001a\u001c\u0003\f\u0006\u0000\u001b\u0016\u0001\u0000"+
+		"\u0000\u0000\u001b\u0017\u0001\u0000\u0000\u0000\u001b\u0018\u0001\u0000"+
+		"\u0000\u0000\u001b\u0019\u0001\u0000\u0000\u0000\u001b\u001a\u0001\u0000"+
+		"\u0000\u0000\u001c\u0003\u0001\u0000\u0000\u0000\u001d\u001e\u0005\u0001"+
+		"\u0000\u0000\u001e\u0005\u0001\u0000\u0000\u0000\u001f \u0005\u0002\u0000"+
+		"\u0000 \u0007\u0001\u0000\u0000\u0000!\"\u0005\u0003\u0000\u0000\"\t\u0001"+
+		"\u0000\u0000\u0000#$\u0005\u0004\u0000\u0000$\u000b\u0001\u0000\u0000"+
+		"\u0000%&\u0005\u0005\u0000\u0000&\r\u0001\u0000\u0000\u0000\u0002\u0011"+
+		"\u001b";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

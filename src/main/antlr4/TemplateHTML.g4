@@ -1,23 +1,22 @@
 grammar TemplateHTML;
 
-//Parser Rules
-
 htmlDocument : node* EOF # DocumentNode;
 
 node
-    : jinjaPrint   # JinjaPrintNode   
+    : doctype      # DoctypeNode
+    | jinjaPrint   # JinjaPrintNode   
     | jinjaCode    # JinjaCodeNode    
     | htmlTag      # HtmlTagNode      
     | htmlText     # TextNode         
     ;
 
+doctype    : DOCTYPE;
 jinjaPrint : JINJA_VAR;
 jinjaCode  : JINJA_TAG;
 htmlTag    : TAG;
 htmlText   : TEXT;
 
-// Lexer Rules
-
+DOCTYPE  : '<!' .*? '>';
 JINJA_VAR : '{{' .*? '}}';
 
 JINJA_TAG : '{%' .*? '%}';

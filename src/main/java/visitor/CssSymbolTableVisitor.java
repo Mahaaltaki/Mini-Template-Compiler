@@ -1,10 +1,10 @@
 package visitor;
 import antlr.*;
 import symboltable.SymbolTable;
-import antlr.SimpleCSSBaseVisitor;
+import antlr.SimpleCSSParserBaseVisitor;
 import antlr.SimpleCSSParser;
 
-public class CssSymbolTableVisitor extends SimpleCSSBaseVisitor<Void> {
+public class CssSymbolTableVisitor extends SimpleCSSParserBaseVisitor<Void> {
     private SymbolTable symbolTable;
 
     public CssSymbolTableVisitor() {
@@ -17,13 +17,15 @@ public class CssSymbolTableVisitor extends SimpleCSSBaseVisitor<Void> {
 
     @Override
     public Void visitClassSelector(SimpleCSSParser.ClassSelectorContext ctx) {
-        symbolTable.define("." + ctx.ID().getText(), "CSS CLASS", "Global");
+        String name = ctx.ID(0).getText();
+        symbolTable.define("." + name, "CSS CLASS", "Global");
         return null;
     }
 
     @Override
     public Void visitIdSelector(SimpleCSSParser.IdSelectorContext ctx) {
-        symbolTable.define("#" + ctx.ID().getText(), "CSS ID", "Global");
+        String name = ctx.ID(0).getText();
+        symbolTable.define("#" + name, "CSS ID", "Global");
         return null;
     }
 
